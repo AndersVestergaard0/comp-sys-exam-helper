@@ -1,0 +1,178 @@
+:root{
+    --bg:#0b0f14;
+    --panel:#101824;
+    --panel2:#0f1520;
+    --text:#e6edf3;
+    --muted:#9aa7b2;
+    --border:#223043;
+    --accent:#4da3ff;
+    --accent2:#2d7dd2;
+    --danger:#ff6b6b;
+    --radius:14px;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sans: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  }
+  
+  *{ box-sizing: border-box; }
+  body{
+    margin:0;
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+  }
+  
+  .app{
+    display:grid;
+    grid-template-columns: 280px 1fr 320px;
+    min-height: 100vh;
+  }
+  
+  .sidebar, .main, .right{
+    border-right: 1px solid var(--border);
+  }
+  
+  .sidebar{
+    background: var(--panel2);
+    padding: 16px;
+    display:flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .brand-title{ font-weight: 700; font-size: 18px; }
+  .brand-sub{ color: var(--muted); font-size: 12px; margin-top: 2px; }
+  
+  .search{
+    width:100%;
+    padding:10px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: #0b121c;
+    color: var(--text);
+  }
+  
+  .nav{
+    display:flex;
+    flex-direction: column;
+    gap: 6px;
+    overflow:auto;
+    padding-right: 4px;
+    flex:1;
+  }
+  .nav-item{
+    padding:10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #0b121c;
+    cursor:pointer;
+    display:flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .nav-item:hover{ border-color:#2a3c55; }
+  .nav-item.active{
+    border-color: var(--accent2);
+    box-shadow: 0 0 0 2px rgba(77,163,255,.15);
+  }
+  .nav-title{ font-weight: 600; }
+  .nav-tag{ color: var(--muted); font-size: 12px; }
+  
+  .sidebar-footer{
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+  }
+  
+  .toggle{
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    color: var(--muted);
+    user-select:none;
+  }
+  
+  .main{
+    padding: 16px;
+    background: var(--bg);
+  }
+  
+  .topbar{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .page-title{ margin:0; font-size: 20px; }
+  
+  .btn{
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: #0b121c;
+    color: var(--text);
+    cursor:pointer;
+  }
+  .btn:hover{ border-color:#2a3c55; }
+  .btn-primary{
+    background: linear-gradient(180deg, var(--accent), var(--accent2));
+    border-color: transparent;
+  }
+  .btn-ghost{
+    background: transparent;
+  }
+  
+  .page{
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--panel);
+    padding: 14px;
+    min-height: 220px;
+  }
+  
+  .output{
+    margin-top: 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--panel);
+    overflow:hidden;
+  }
+  .output-header{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .output-title{ font-weight: 700; }
+  .output-box{
+    margin:0;
+    padding: 12px 14px;
+    font-family: var(--mono);
+    font-size: 13px;
+    white-space: pre-wrap;
+    line-height: 1.35;
+    min-height: 140px;
+  }
+  
+  .right{
+    background: var(--panel2);
+    padding: 16px;
+  }
+  .right-header{
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .notes{
+    color: var(--muted);
+    line-height: 1.45;
+    font-size: 13px;
+  }
+  
+  /* Exam mode: gem højrepanel og gør ting større */
+  .exam .app{
+    grid-template-columns: 280px 1fr;
+  }
+  .exam .right{ display:none; }
+  .exam .output-box{ font-size: 14px; }
+  .exam .btn{ padding: 12px 14px; }
+  

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CompSys Exam Toolkit</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app" class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-title">CompSys Toolkit</div>
+        <div class="brand-sub">Offline exam helper</div>
+      </div>
+
+      <input id="search" class="search" type="search" placeholder="Søg: cache, TLB, lui..." />
+
+      <nav id="nav" class="nav"></nav>
+
+      <div class="sidebar-footer">
+        <label class="toggle">
+          <input id="examMode" type="checkbox" />
+          <span>Exam mode</span>
+        </label>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <h1 id="pageTitle" class="page-title">Home</h1>
+        <div class="topbar-actions">
+          <button id="btnCopy" class="btn">Copy output</button>
+          <button id="btnReset" class="btn btn-ghost">Reset</button>
+        </div>
+      </header>
+
+      <section id="page" class="page"></section>
+
+      <section class="output">
+        <div class="output-header">
+          <div class="output-title">Output</div>
+          <div class="output-actions">
+            <button id="btnCompute" class="btn btn-primary">Compute</button>
+          </div>
+        </div>
+        <pre id="output" class="output-box">(intet endnu)</pre>
+      </section>
+    </main>
+
+    <aside id="rightPanel" class="right">
+      <div class="right-header">Theory / Notes</div>
+      <div id="notes" class="notes"></div>
+    </aside>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
