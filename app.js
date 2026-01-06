@@ -4,8 +4,10 @@ import { loadState, saveState, getModuleState, setModuleState } from "./lib/stor
 import home from "./modules/home.js";
 import cache from "./modules/cache.js";
 import vm from "./modules/vm.js";
+import riscv from "./modules/riscv.js";
+import memoryNet from "./modules/memory-net.js";
 
-const modules = [home, cache, vm];
+const modules = [home, cache, vm, riscv, memoryNet];
 
 const els = {
   nav: document.querySelector("#nav"),
